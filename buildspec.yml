@@ -12,13 +12,13 @@ phases:
       - aws --version
       # update the following line with your own region
       # - $(aws ecr get-login --no-include-email --region eu-west-2)
-      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      #- COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG="latest"
-      - AWS_Account_ID=$(aws sts get-caller-identity --query Account --output text)
+      #- AWS_Account_ID=$(aws sts get-caller-identity --query Account --output text)
       - REPOSITORY_URI=public.ecr.aws/bncsimages/test-proj
       # pre build steps to generate dist folder -sk
-      - npm install
-      - npm run build
+      #- npm install
+      #- npm run build
   build:
     commands:
       - echo Build started on `date`
